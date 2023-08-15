@@ -4,7 +4,7 @@ import {
   CharacterDetails,
   fetchCharacters,
 } from "../../../helpers/getCharacterByIdHelper";
-
+let txtColor = "text-black-900";
 export default function Home({ params }: { params: { characterId: string } }) {
   let id = params.characterId;
   const [characters, setCharacter] = useState<CharacterDetails[]>([]);
@@ -32,7 +32,7 @@ export default function Home({ params }: { params: { characterId: string } }) {
   }
 
   return (
-    <div className="p-4 flex justify-center items-center">
+    <div className="p-4 flex justify-center items-center h-screen">
       <div>
         <h1 className="text-2xl font-bold mb-4 text-center">
           Character Details
@@ -50,14 +50,14 @@ export default function Home({ params }: { params: { characterId: string } }) {
               />
             </div>
             <div className="w-3/4">
-              <p className="text-lg font-semibold">Name: {character.name}</p>
-              <p>Gender: {character.gender}</p>
-              <p>House: {character.house}</p>
-              <p>
+              <p className={`text-lg font-semibold ${txtColor}`}>Name: {character.name}</p>
+              <p className={txtColor}>Gender: {character.gender}</p>
+              <p className={txtColor}>House: {character.house}</p>
+              <p className={txtColor}>
                 Wand: {character.wand.wood} with {character.wand.core} core,{" "}
                 {character.wand.length} inches
               </p>
-              {character.alive ? <p>Status: Alive</p> : <p>Status: Deceased</p>}
+              {character.alive ? <p className={txtColor}>Status: Alive</p> : <p className={txtColor}>Status: Deceased</p>}
             </div>
           </div>
         ))}
