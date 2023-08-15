@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Character, fetchCharacters } from "./characterListHelper";
+import { Character, fetchCharacters } from "../helpers/characterListHelper";
 import Link from "next/link";
 
 const CharacterList: React.FC = () => {
@@ -13,6 +13,13 @@ const CharacterList: React.FC = () => {
     fetchAndSetCharacters();
   }, []);
 
+  if (characters.length == 0) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p>Loading Characters ...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-4">
