@@ -1,5 +1,5 @@
 "use client"
-import CharacterList from "@/components/CharacterList/CharacterList";
+import CharacterList from "@/components/CharacterList";
 
 export default function Home() {
   return (
