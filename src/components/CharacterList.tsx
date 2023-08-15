@@ -47,7 +47,7 @@ const CharacterList: React.FC = () => {
   }
 
   return (
-    <div className="p-4 w-10/12">
+    <div className="p-4 w-full lg:w-11/12">
       <div className="flex flex-col justify-center rounded-lg items-center mt-4 mb-4 sticky top-0 bg-gray-200 z-10">
         <h1 className="text-3xl text-teal-500 italic font-bold m-4 text-center p-4">
           Harry Potter Characters
@@ -58,7 +58,7 @@ const CharacterList: React.FC = () => {
             placeholder="Search by name or house"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="p-2 border rounded-lg text-black"
+            className="p-2 text-black"
           />
         </div>
       </div>

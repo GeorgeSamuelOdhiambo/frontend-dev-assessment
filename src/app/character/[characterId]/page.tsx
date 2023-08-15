@@ -4,7 +4,7 @@ import {
   CharacterDetails,
   fetchCharacters,
 } from "../../../helpers/getCharacterByIdHelper";
-let txtColor = "text-black-900";
+let txtColor = "text-black";
 export default function Home({ params }: { params: { characterId: string } }) {
   let id = params.characterId;
   const [characters, setCharacter] = useState<CharacterDetails[]>([]);
