@@ -4,7 +4,7 @@ import {
   CharacterDetails,
   fetchCharacters,
 } from "../../../helpers/getCharacterByIdHelper";
-let txtColor = "text-black";
+let txtColor = "text-black-900";
 export default function Home({ params }: { params: { characterId: string } }) {
   let id = params.characterId;
   const [characters, setCharacter] = useState<CharacterDetails[]>([]);
@@ -26,7 +26,7 @@ export default function Home({ params }: { params: { characterId: string } }) {
   if (characters.length == 0) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
+        <p className="text-3xl text-lime-500">Loading...</p>
       </div>
     );
   }
@@ -34,12 +34,12 @@ export default function Home({ params }: { params: { characterId: string } }) {
   return (
     <div className="p-4 flex justify-center items-center h-screen">
       <div>
-        <h1 className="text-2xl font-bold mb-4 text-center">
+        <h1 className="text-3xl  text-teal-500 italic font-bold mb-4 text-center">
           Character Details
         </h1>
         {characters.map((character) => (
           <div
-            className="bg-white rounded-lg shadow-md p-4 flex"
+            className="items-center  bg-opacity-75 bg-white rounded-lg shadow-md p-4 flex"
             key={character.id}
           >
             <div className="w-1/4 pr-4">

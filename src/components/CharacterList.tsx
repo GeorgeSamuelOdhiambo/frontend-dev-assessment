@@ -41,37 +41,39 @@ const CharacterList: React.FC = () => {
   if (characters.length == 0) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <p>Loading Characters ...</p>
+        <p className="text-3xl text-lime-500">Loading Characters ...</p>
       </div>
     );
   }
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4 text-center pb-4">
-        Harry Potter Characters
-      </h1>
-      <div className="flex justify-center items-center mt-4 mb-4">
-        <input
-          type="text"
-          placeholder="Search by name or house"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="p-2 border rounded-lg"
-        />
+    <div className="p-4 w-10/12">
+      <div className="flex flex-col justify-center rounded-lg items-center mt-4 mb-4 sticky top-0 bg-gray-200 z-10">
+        <h1 className="text-3xl text-teal-500 italic font-bold m-4 text-center p-4">
+          Harry Potter Characters
+        </h1>
+        <div className="mb-4">
+          <input
+            type="text"
+            placeholder="Search by name or house"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="p-2 border rounded-lg text-black"
+          />
+        </div>
       </div>
-      
+
       {mySearch && (
-        <h1 className="text-0.5xl text-red-900 font-bold mb-2 text-center pb-4">
+        <h1 className="text-2xl text-lime-600 font-bold m-2 text-center p-4">
           No match for your search ....
         </h1>
       )}
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
         {viewData &&
           characters.map((character) => (
             <Link key={character.id} href={`/character/${character.id}`}>
-              <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
+              <div className="bg-white bg-opacity-75 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
                 <h2 className="text-lg text-black font-semibold">
                   {character.name}
                 </h2>
@@ -87,7 +89,7 @@ const CharacterList: React.FC = () => {
         {searchResults.length > 0 &&
           searchResults.map((character) => (
             <Link key={character.id} href={`/character/${character.id}`}>
-              <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
+              <div className="bg-white bg-opacity-75 rounded-lg shadow-md p-4 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer">
                 <h2 className="text-lg text-black font-semibold">
                   {character.name}
                 </h2>

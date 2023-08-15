@@ -21,7 +21,11 @@ body {
   background: linear-gradient(
       to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
+      rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+  background-image: url('https://img.freepik.com/free-photo/abstract-futuristic-background-with-3d-design_1361-3532.jpg?size=626&ext=jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
